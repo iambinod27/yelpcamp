@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import Layout from "./components/Layout";
+import AddCampground from "./pages/AddCampground";
+import Auth from "./pages/Auth/Auth";
+import CampDetail from "./pages/CampDetail";
+import Homepage from "./pages/Homepage";
+import Landing from "./pages/Landing";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/Home" element={<Layout />}>
+          <Route index element={<Homepage />} />
+          <Route path="addCampground" element={<AddCampground />} />
+          <Route path="campDetail/:id" element={<CampDetail />} />
+        </Route>
+
+        <Route path="/Login" element={<Auth />} />
+        <Route path="/SignUp" element={<Auth />} />
+      </Routes>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={1500}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme="dark"
+        pauseOnHover
+      />
+    </>
   );
 }
 
