@@ -6,7 +6,7 @@ function CampgroundCard({ camp }) {
   return (
     <>
       <div className="font-Archivo border border-slate-300 p-3 rounded-md">
-        <div className="">
+        <div>
           <img
             src={camp.image}
             alt={camp.title}
@@ -14,8 +14,10 @@ function CampgroundCard({ camp }) {
           />
           <div className="flex flex-col py-2">
             <h2 className="font-bold text-[1rem]">{camp.title}</h2>
-            <p className="py-2 text-[#5f5f5f]">{camp.description}</p>
-            <Link to={`campDetail/:${camp.id}`}>
+            <p className="py-2 text-[#5f5f5f]">
+              {camp.description.slice(0, 75)}
+            </p>
+            <Link to={`campDetail/:${camp.id}`} state={{ campgrounds: camp }}>
               <Button
                 fad="bg-white text-black border border-slate-300 font-bold w-full "
                 text="View Campground"

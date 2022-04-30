@@ -2,11 +2,14 @@ import { getAuth } from "firebase/auth";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { app } from "../firebase.config";
+import { useAuthStatus } from "../hooks/useAuthStatus";
 import Button from "./Button";
 
 function SearchCamp() {
   const auth = getAuth(app);
   const user = auth.currentUser;
+
+  const { loggedIn } = useAuthStatus();
 
   const [search, setSearch] = useState("");
 
@@ -35,7 +38,7 @@ function SearchCamp() {
             />
             <Button type="submit" text="Search" />
           </form>
-          <Link to={user !== null ? "addCampground" : "/Login"}>
+          <Link to={loggedIn && user !== null ? "addCampground" : "/Login"}>
             <div className="underline cursor-pointer">
               Or add your own campground
             </div>
