@@ -1,20 +1,19 @@
-import { getAuth } from "firebase/auth";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import map from "../Assets/Map.png";
 import Button from "../components/Button";
-import { app } from "../firebase.config";
+import CampgroundContext from "../context/campgroundContext";
 
 function CampDetail() {
-  const auth = getAuth(app);
-  const user = auth.currentUser;
-
-  const [comment, setComment] = useState("");
-  const onChange = (e) => setComment(e.target.value);
+  const { camps } = useContext(CampgroundContext);
+  const [camp, setCamp] = camps;
 
   const location = useLocation();
   const { campgrounds } = location.state;
   const comments = campgrounds.comments;
+
+  const [comment, setComment] = useState("");
+  const onChange = (e) => setComment(e.target.value);
 
   const onComment = (e) => {
     e.preventDefault();

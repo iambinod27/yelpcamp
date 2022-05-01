@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { useLayoutEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,6 +11,12 @@ import Homepage from "./pages/Homepage";
 import Landing from "./pages/Landing";
 
 function App() {
+  const location = useLocation();
+  // Scroll to top if path changes
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
       <Routes>

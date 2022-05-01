@@ -10,7 +10,7 @@ function CampgroundCard({ camp }) {
           <img
             src={camp.image}
             alt={camp.title}
-            className="object-cover rounded-md w-[20rem]"
+            className="object-cover rounded-md w-full h-[12rem] "
           />
           <div className="flex flex-col py-2">
             <h2 className="font-bold text-[1rem]">{camp.title}</h2>
