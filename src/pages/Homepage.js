@@ -5,6 +5,7 @@ import CampgroundContext from "../context/campgroundContext";
 
 function Homepage() {
   const { camps } = useContext(CampgroundContext);
+  // eslint-disable-next-line
   const [camp, setCamp] = camps;
 
   return (

@@ -31,6 +31,7 @@ function AddCampground() {
   };
 
   const { camps } = useContext(CampgroundContext);
+  // eslint-disable-next-line
   const [camp, setCamp] = camps;
 
   const onSubmit = (e) => {
