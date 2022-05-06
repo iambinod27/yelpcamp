@@ -25,7 +25,7 @@ function App() {
         <Route path="/Home" element={<Layout />}>
           <Route index element={<Homepage />} />
           <Route path="addCampground" element={<AddCampground />} />
-          <Route path="campDetail/:campID/" element={<CampDetail />} />
+          <Route path="campDetail/:id/" element={<CampDetail />} />
         </Route>
 
         <Route path="/Login" element={<Auth />} />

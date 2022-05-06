@@ -8,7 +8,7 @@ function Homepage() {
   const [camp, setCamp] = camps;
 
   return (
-    <div className="w-[82%] mx-auto">
+    <div className="w-[88%] lg:w-[82%] mx-auto">
       <SearchCamp />
 
       <div className="grid grid-cols-autofill gap-7 py-10 ">

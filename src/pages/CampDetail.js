@@ -1,29 +1,27 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import map from "../Assets/Map.png";
 import Button from "../components/Button";
-import CampgroundContext from "../context/campgroundContext";
 
 function CampDetail() {
-  const { camps } = useContext(CampgroundContext);
-  const [camp, setCamp] = camps;
-
   const location = useLocation();
   const { campgrounds } = location.state;
-  const comments = campgrounds.comments;
+  const commented = campgrounds.comments;
 
   const [comment, setComment] = useState("");
   const onChange = (e) => setComment(e.target.value);
 
   const onComment = (e) => {
     e.preventDefault();
+
+    setComment("");
   };
 
   return (
     <>
-      <div className="w-[82%] mx-auto py-6 font-Archivo">
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-start-1 col-end-5">
+      <div className="w-[85%] mx-auto py-6 font-Archivo">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-6">
+          <div className="lg:col-start-1 lg:col-end-5">
             <div className="border border-slate-300 p-10 rounded-md">
               <img
                 src={map}
@@ -32,13 +30,13 @@ function CampDetail() {
               />
             </div>
           </div>
-          <div className="col-start-5 col-end-13">
-            <div className="border border-slate-300 p-10 rounded-md">
+          <div className="lg:col-start-5 lg:col-end-13">
+            <div className="border border-slate-300 p-5 lg:p-10 rounded-md">
               <div>
                 <img
                   src={campgrounds.image}
                   alt={campgrounds.title}
-                  className="object-cover rounded-md w-full h-[20rem] mb-5"
+                  className="object-cover rounded-md w-full h-[10rem] lg:h-[20rem] mb-5"
                 />
                 <div>
                   <div className="flex justify-between">
@@ -55,9 +53,9 @@ function CampDetail() {
               </div>
             </div>
 
-            <div className="border border-slate-300 p-10 mt-5 rounded-md ">
+            <div className="border border-slate-300 p-5 lg:p-10 mt-5 rounded-md ">
               {/* Comments */}
-              {comments.map((item) => {
+              {commented.map((item) => {
                 return (
                   <div className="border-b py-4" key={item.id}>
                     <div className="flex justify-between">

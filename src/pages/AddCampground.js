@@ -46,12 +46,12 @@ function AddCampground() {
     navigate("/Home");
   };
 
-  console.log(camp);
-
   return (
     <>
-      <div className="w-[50%] mx-auto font-Archivo py-5">
-        <h1 className="text-4xl font-bold pb-4">Add New Campground</h1>
+      <div className="w-[82%] lg:w-[50%] mx-auto font-Archivo py-5">
+        <h1 className="text-2xl lg:text-4xl font-bold pb-4">
+          Add New Campground
+        </h1>
 
         <form onSubmit={onSubmit}>
           <div className="flex flex-col py-3">
@@ -59,7 +59,7 @@ function AddCampground() {
             <input
               type="text"
               id="title"
-              className="border rounded-md p-3  focus:outline-none"
+              className="border rounded-md p-3 bg-[#fafafa]  focus:outline-none"
               value={title}
               onChange={onChange}
               placeholder="Mt Everest"
@@ -71,7 +71,7 @@ function AddCampground() {
             <input
               type="number"
               id="price"
-              className="border rounded-md p-3  focus:outline-none"
+              className="border rounded-md p-3 bg-[#fafafa] focus:outline-none"
               value={price}
               onChange={onChange}
               placeholder="$149"
@@ -83,7 +83,7 @@ function AddCampground() {
             <input
               type="text"
               id="image"
-              className="border rounded-md p-3  focus:outline-none"
+              className="border rounded-md p-3 bg-[#fafafa] focus:outline-none"
               value={image}
               onChange={onChange}
               placeholder="https://images.pexels.com/photos/1752806/"
@@ -98,7 +98,7 @@ function AddCampground() {
               id="description"
               cols="33"
               rows="10"
-              className="resize-none p-3 border rounded-md focus:outline-none"
+              className="resize-none p-3 border bg-[#fafafa] rounded-md focus:outline-none"
               placeholder="Mount Everest is the highest of the Himalayan mountains, and—at 8,849 meters (29,032 feet)—is considered the highest point on Earth. illness caused by reduced oxygen levels at high elevations. large mass of snow and other material suddenly and quickly tumbling down a mountain. art and science of making maps"
             ></textarea>
           </div>

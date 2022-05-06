@@ -17,7 +17,10 @@ function CampgroundCard({ camp }) {
             <p className="py-2 text-[#5f5f5f]">
               {camp.description.slice(0, 75)}
             </p>
-            <Link to={`campDetail/:${camp.id}`} state={{ campgrounds: camp }}>
+            <Link
+              to={`campDetail/:${camp.id}`}
+              state={{ campgrounds: camp, id: camp.id }}
+            >
               <Button
                 fad="bg-white text-black border border-slate-300 font-bold w-full "
                 text="View Campground"

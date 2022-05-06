@@ -6,7 +6,7 @@ module.exports = {
         Archivo: ["Archivo", "sans-serif"],
       },
       gridTemplateColumns: {
-        autofill: " repeat(auto-fill, minmax(20rem, 1fr))",
+        autofill: " repeat(auto-fill, minmax(18rem, 1fr))",
       },
     },
   },
